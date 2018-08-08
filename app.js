@@ -18,8 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 //Import Routes
-const companyRoutes = require('./routes/company');
 const appRoutes = require('./routes/app');
+const companyRoutes = require('./routes/company');
+const userRoutes = require('./routes/user');
 //Conexion DB
 mongoose.connection.openUri('mongodb://localhost:27017/weHome',(err,res)=>{
    if(err) throw err;
@@ -29,6 +30,7 @@ mongoose.connection.openUri('mongodb://localhost:27017/weHome',(err,res)=>{
 //Routes
 app.use('/',appRoutes);
 app.use('/company',companyRoutes);
+app.use('/user',userRoutes);
 
 //Escuchar peteciones
 app.listen(3000, ()=>{
