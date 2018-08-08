@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const companySchema = new Schema({
   name: {
     type: String,
+    unique:true,
     required: [true,'El nombre es obligatorio']
   }
 });
