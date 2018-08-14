@@ -29,8 +29,8 @@ mongoose.connection.openUri('mongodb://localhost:27017/weHome',(err,res)=>{
 
 //Routes
 app.use('/',appRoutes);
-app.use('/company',companyRoutes);
-app.use('/user',userRoutes);
+app.use('/config/company',companyRoutes);
+app.use('/config/user',userRoutes);
 
 //Escuchar peteciones
 app.listen(3000, ()=>{
