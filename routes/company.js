@@ -55,7 +55,8 @@ app.get('/:id', (req, res) => {
 app.post('/', (req, res) => {
   const body = req.body;
   const company = new Company({
-    name: body.name
+    name: body.name,
+    state: body.state
   });
 
   company.save((err, companySaved) => {
@@ -95,6 +96,7 @@ app.put('/:id', (req, res) => {
       });
     }
     company.name = body.name;
+    company.state = body.state;
     company.save((err, companySaved) => {
       if (err) {
         return res.status(400).json({
