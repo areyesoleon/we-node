@@ -100,7 +100,6 @@ app.put('/:id', (req, res) => {
     }
     user.name = body.name;
     user.email = body.email;
-    user.password = body.password;
     user.companyDefault = body.companyDefault;
     user.state = body.state;
     user.save((err, userSaved) => {
